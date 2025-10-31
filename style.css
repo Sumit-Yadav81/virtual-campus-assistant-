@@ -176,3 +176,43 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--secondary-color);
 }
+
+/* ================================== */
+/* === NEW STYLES FOR IMPROVEMENT === */
+/* ================================== */
+
+/* Typing indicator styles */
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background-color: var(--bot-message-bg);
+    color: var(--text-color);
+    border-radius: 1rem;
+    border-bottom-left-radius: 0.25rem;
+    align-self: flex-start;
+}
+
+.typing-indicator span {
+    height: 8px;
+    width: 8px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 2px;
+    opacity: 0.4;
+    animation: dot-flashing 1.4s infinite alternate;
+}
+
+.typing-indicator span:nth-of-type(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-of-type(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes dot-flashing {
+    0% { opacity: 0.4; }
+    50%, 100% { opacity: 1; }
+}
